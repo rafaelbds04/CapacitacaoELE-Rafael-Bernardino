@@ -45,7 +45,7 @@ int main()
 void mainMenu()
 {
     cout << "Digite qual das operacoes deseja fazer: " << endl;
-    cout << "[1] Soma \n[2] Subtracao \n[3] Multiplicacao \n[4] Divisao \n[5] Resto Divisao \n[6] Raiz Quadrada \n[7] Fatorial" << endl;
+    cout << "[1] Soma \n[2] Subtracao \n[3] Multiplicacao \n[4] Divisao \n[5] Resto Divisao \n[6] Raiz Quadrada \n[7] Fatorial \n[8] Exponencial" << endl;
     cin >> operation;
 
     if (operation < 4 && operation > 0)
@@ -95,6 +95,10 @@ void mainMenu()
         cout << "Digite o numero no qual deseja descobrir o fatorial:" << endl;
         cin >> firstValue;
         cout << "Resultado fatorial de: " << firstValue << " = " << factorial(firstValue) << endl;
+        break;
+    case 8:
+        getInputs("base", "expoente");
+        cout << "Resultado de " << firstValue << "^" << secondValue << " = " << pow(firstValue, secondValue) << endl;
         break;
     default:
         cout << "Operacao invalida" << endl;
