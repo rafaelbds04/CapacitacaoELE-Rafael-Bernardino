@@ -2,6 +2,16 @@
 using namespace std;
 char operacao;
 
+float firstValue, secondValue;
+
+void getInputs(string firstValueName = "primeiro numero", string secondValueName = "segundo numero")
+{
+    cout << "Digite o " << firstValueName << endl;
+    cin >> firstValue;
+    cout << "Digite o " << secondValueName << endl;
+    cin >> secondValue;
+}
+
 int main()
 {
     cout << "Ola, bem vindo a calculadora arcaica" << endl;
