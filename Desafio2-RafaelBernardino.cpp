@@ -4,6 +4,7 @@
 using namespace std;
 int factorial(int value);
 int operation;
+void mainMenu();
 
 float firstValue, secondValue;
 
@@ -17,7 +18,32 @@ void getInputs(string firstValueName = "primeiro numero", string secondValueName
 
 int main()
 {
+    int userDecision = 1;
     cout << "Ola, bem vindo a calculadora arcaica" << endl;
+    while (userDecision)
+    {
+        mainMenu();
+        cout << "Deseja realizar uma nova operacao? \n[0] Nao, desejo sair. \n[1] Sim" << endl;
+        cin >> userDecision;
+
+        while (!(0 <= userDecision && userDecision < 2))
+        {
+            cout << "Digite uma opcao valida\n[0] Sair\n[1] Realizar nova operacao" << endl;
+            cin >> userDecision;
+        }
+
+        if (userDecision == 0)
+        {
+            cout << "Shutting down...";
+            return 0;
+        }
+    }
+
+    return 0;
+}
+
+void mainMenu()
+{
     cout << "Digite qual das operacoes deseja fazer: " << endl;
     cout << "[1] Soma \n[2] Subtracao \n[3] Multiplicacao \n[4] Divisao \n[5] Resto Divisao \n[6] Raiz Quadrada \n[7] Fatorial" << endl;
     cin >> operation;
@@ -58,7 +84,7 @@ int main()
         cin >> firstValue;
         if (firstValue < 0)
         {
-            cout << "Não e possivel encontrar raiz real de um numero negativo" << endl;
+            cout << "Nao e possivel encontrar raiz real de um numero negativo" << endl;
         }
         else
         {
@@ -74,8 +100,6 @@ int main()
         cout << "Operacao invalida" << endl;
         break;
     }
-
-    return 0;
 }
 
 int factorial(int value)
